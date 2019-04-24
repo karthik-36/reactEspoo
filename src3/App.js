@@ -8,7 +8,7 @@ import legend from './legend.png';
 import { square } from './index';
 import socketIOClient from "socket.io-client";
 const graphImage = require('./people/' +1 + '.png')
-//console.log(square());
+//console.log(square()); 
 
 //alert(square());
 var people = [];
@@ -21,7 +21,7 @@ var NewData = { index : -1 , value : -1 };
 var visi;
 var seats = square();
 for (var i = 0 ;i<82;i++){
-
+ 
  }
  var s0 = [];
 class App extends Component {
@@ -37,24 +37,24 @@ class App extends Component {
     const { endpoint } = this.state;
     const socket = socketIOClient(endpoint, {transports: ['websocket']});
     socket.on("status", data => {
-
+      
       NewData = data;
     this.setState({ indexSeat : data.index ,  indexValue : data.value})
     });
-
+    
 
   }
 
+  
+ 
+   
 
-
-
-
-
+  
   render() {
-
+  
     console.log("NewValue : "+NewData.index  + "NewValue: " + NewData.value);
     const { indexSeat  } = this.state;
-
+  
 if(x1 === 1){
     console.log("res : " + indexSeat);
         for(var x=0;x <=13 ;x++){
@@ -64,18 +64,15 @@ if(x1 === 1){
             };
            }
        x1 =0;   }
-////////  test
- //     for(var x=0;x <=13 ;x++){
-  //   s0[x] = {
-   //  visibility : 'visible'
-   //   };
- //    }
-  //   s0[5] = {
- //      visibility : 'visible'
- //       };
-  //      s0[4] = {
-  //        visibility : 'visible'
-  //         };
+////////  test 
+ /*     for(var x=0;x <=13 ;x++){
+     s0[x] = {
+     visibility : 'visible'
+      };
+      } */
+     // s0[3] = {
+     //   visibility : 'visible'
+     //    };
 //////////
 
        visi = "hidden";
@@ -87,16 +84,16 @@ if(x1 === 1){
        };
 
 
-//<img src={legend}    className="legend" alt="logo" /> <h1  >Epsoo Cafeteria {this.props.name}  {indexSeat} </h1>
+//<img src={legend}    className="legend" alt="logo" />
 
     return (
       <div  className="App"  >
-
+        
         <header className="App-header">
-
+          
           <img src={kone}   className="kone" alt="logo" />
+        <h1>Epsoo Cafeteria {this.props.name}  {indexSeat} </h1>
 
-          <h1  >Espoo Cafeteria  </h1>
         <div className="OccupiedContainer">
 
           <img src={cafeNew}  id = "parent"  className="epsoo" alt="logo" />
@@ -109,7 +106,7 @@ if(x1 === 1){
           <img src={people[5]} style = {s0[5]} className="occupied5" alt="logo" />
           <img src={people[6]} style = {s0[6]} className="occupied6" alt="logo" />
           <img src={people[7]} style = {s0[7]} className="occupied7" alt="logo" />
-
+         
 
 
          </div>
